@@ -20,7 +20,7 @@ CLIENT_SECRET = os.getenv("AUTH0_CLIENT_SECRET")
 USER_ID = os.getenv("AUTH0_USER_ID")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-APP_BASE_URL = "http://localhost:8000"
+APP_BASE_URL = os.getenv("APP_BASE_URL", "http://localhost:8000")
 CALLBACK_URL = APP_BASE_URL + "/callback"
 TOKEN_FILE = "google_token.json"
 
