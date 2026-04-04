@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - AutoPilot</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; background: #0a0a0a; color: #00ff88; }
+        h1 { color: #00ff88; }
+        .btn { background: #00ff88; color: #0a0a0a; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px; }
+        .btn-red { background: #ff4444; color: white; }
+        .box { border: 1px solid #00ff88; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>🤖 AutoPilot Dashboard</h1>
+    <div class="box">
+        <p>👤 Logged in as: <strong>{{ user.email }}</strong></p>
+        <p>✅ Auth0 Token Vault: Ready</p>
+        <p>✅ CIBA Push Auth: Active</p>
+    </div>
+    <a href="/connect-google" class="btn">🔗 Connect Google Account (Token Vault)</a>
+    <a href="/scan" class="btn">🔍 Scan Gmail for Threats</a>
+    <a href="/logout" class="btn btn-red">Logout</a>
+</body>
+</html>

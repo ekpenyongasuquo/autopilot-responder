@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results - AutoPilot</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; background: #0a0a0a; color: #00ff88; }
+        h1 { color: #00ff88; }
+        .btn { background: #00ff88; color: #0a0a0a; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px; }
+        .threat-high { border: 1px solid #ff4444; padding: 15px; margin: 10px 0; background: #1a0000; }
+        .threat-low { border: 1px solid #00ff88; padding: 15px; margin: 10px 0; }
+        .error { color: #ff4444; border: 1px solid #ff4444; padding: 15px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Scan Results</h1>
+    {% if error %}
+        <div class="error">❌ {{ error }}</div>
+    {% endif %}
+    {% if results %}
+        <p>Found {{ results|length }} emails:</p>
+        {% for r in results %}
+            <div class="{{ 'threat-high' if r.threat == 'HIGH' else 'threat-low' }}">
+                <p><strong>From:</strong> {{ r.from }}</p>
+                <p><strong>Subject:</strong> {{ r.subject }}</p>
+                <p><strong>Threat Level:</strong> {{ r.threat }}</p>
+                {% if r.threat == 'HIGH' %}
+                    <p>⚠️ Malicious IP detected: {{ r.ip }}</p>
+                    <a href="/approve/{{ r.ip }}" class="btn">🔒 Block IP (Requires Phone Approval)</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No unread emails found or scan not completed.</p>
+    {% endif %}
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+</body>
+</html>

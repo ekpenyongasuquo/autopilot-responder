@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Blocked - AutoPilot</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; background: #0a0a0a; color: #00ff88; }
+        h1 { color: #00ff88; }
+        .btn { background: #00ff88; color: #0a0a0a; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px; }
+        .box { border: 1px solid #00ff88; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>✅ Action Completed!</h1>
+    <div class="box">
+        <p>🔒 IP Address <strong>{{ ip }}</strong> has been blocked</p>
+        <p>✅ Firewall rule added</p>
+        <p>✅ Incident logged to security dashboard</p>
+        <p>✅ Team alert sent</p>
+        <p>Human approval was verified via Auth0 CIBA push notification</p>
+    </div>
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+</body>
+</html>

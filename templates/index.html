@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AutoPilot Security Responder</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; background: #0a0a0a; color: #00ff88; }
+        h1 { color: #00ff88; }
+        .btn { background: #00ff88; color: #0a0a0a; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px; }
+        .box { border: 1px solid #00ff88; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>🤖 AutoPilot Security Responder</h1>
+    <h3>Zero-Trust AI Gateway powered by Auth0</h3>
+    <div class="box">
+        <p>An AI Security Analyst that monitors your Gmail for threats and requests human approval before taking action.</p>
+        <p>✅ Auth0 Token Vault for secure Gmail access</p>
+        <p>✅ AI threat detection on incoming emails</p>
+        <p>✅ Auth0 CIBA push notification for human-in-the-loop approval</p>
+        <p>✅ Simulated IP blocking after approval</p>
+    </div>
+    {% if user %}
+        <p>Welcome, {{ user.name }}!</p>
+        <a href="/dashboard" class="btn">Go to Dashboard</a>
+    {% else %}
+        <a href="/login" class="btn">Login with Auth0</a>
+    {% endif %}
+</body>
+</html>
